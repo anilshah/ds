@@ -7,7 +7,6 @@ public class Palindrome {
 		
 	}
 		
-	
 	static void checkPalindrome(String originalStr){
 		
 		String reverseStr = "";
@@ -23,7 +22,6 @@ public class Palindrome {
 				System.out.println("str is palindrome");
 			}
 			else{
-				
 				System.out.println("str is not palindrome");
 			}
 			

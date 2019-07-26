@@ -36,7 +36,6 @@ int[] checkTwoSumMethod2(int[] Arr, int num ){
 		if(Arr == null || Arr.length==0){
 			return result;
 		}
-		
 		Map<Integer, Integer> mp = new HashMap<>();
 		
 		for(int i=0; i<Arr.length; i++){
@@ -51,7 +50,6 @@ int[] checkTwoSumMethod2(int[] Arr, int num ){
 				mp.put(Arr[i], i);
 			}
 		}
-		
 		
 		return result;
 	}

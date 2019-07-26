@@ -7,13 +7,13 @@ public class BinaryTreeApp {
 		TreeNode root = null;
 		BT t = new BT();
 		
-		root = t.createNode(8);
-		root.left = t.createNode(5);
-		root.right = t.createNode(9);
-		root.left.left = t.createNode(4);
-		root.left.right = t.createNode(3);
-		root.right.left = t.createNode(6);
-		root.right.right = t.createNode(7);
+		root = t.createNode(200);
+		root.left = t.createNode(100);
+		root.right = t.createNode(250);
+		root.left.left = t.createNode(50);
+		root.left.right = t.createNode(150);
+		root.right.left = t.createNode(190);
+		root.right.right = t.createNode(300);
 		
 		System.out.println("in order");
 		t.inorder(root);
@@ -24,6 +24,15 @@ public class BinaryTreeApp {
 		System.out.println("post order");
 		t.postorder(root);
 		
+		BT bst = new BT();
+		if(bst.isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE))
+		{
+			System.out.println("it's BST");
+		}
+		else
+		{
+			System.out.println("Not a BST");
+		}
 		/**
 		TreeNode bstRoot = null;
 		BT bst = new BT();
@@ -34,6 +43,7 @@ public class BinaryTreeApp {
 		bstRoot = bst.insertNode(bstRoot, 9);
 		
 		**/
+		
 		
 	}
 
@@ -63,6 +73,22 @@ class BT{
 		
 		return n1;
 	}
+	
+	Boolean isBST(TreeNode n, int min, int max){
+		
+		System.out.println("node="+n.data+"=min="+min+"=max="+max);
+		
+		if(n==null || n.data<min || n.data>max)
+			return false;
+		
+		isBST(n.left, min, n.data);
+		isBST(n.right, n.data, max);
+		
+		return true;
+		
+		
+	}
+	
 	
 	public void inorder(TreeNode n)
 	{
